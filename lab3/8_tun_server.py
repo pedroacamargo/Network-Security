@@ -22,7 +22,7 @@ os.system(f"ip addr add 192.168.53.2/24 dev {ifname}")
 os.system(f"ip link set dev {ifname} up")
 
 # ip route add <network> dev <interface> via <router ip>
-os.system("ip route add 192.168.50.0/24 dev {}".format(ifname))
+os.system("ip route add 192.168.50.0/24 dev {} via 192.168.53.1".format(ifname))
 
 # Socket UDP
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

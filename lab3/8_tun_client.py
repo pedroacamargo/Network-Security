@@ -23,7 +23,7 @@ os.system("ip addr add 192.168.53.1/24 dev {}".format(ifname))
 os.system("ip link set dev {} up".format(ifname))
 
 # ip route add <network> dev <interface> via <router ip>
-os.system("ip route add 192.168.60.0/24 dev {}".format(ifname))
+os.system("ip route add 192.168.60.0/24 dev {} via 192.168.53.2".format(ifname))
 
 # Create UDP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
